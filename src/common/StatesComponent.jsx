@@ -26,7 +26,7 @@ const StatesComponent = ({ setState, placeholder }) => {
             }
             </option>
         {
-            fetching && !allStates &&
+            !fetching && allStates &&
                 allStates?.data.map(state => (
                     <opiton key={state?.id} value={state?.id}>{state?.name}</opiton>
                 ))
