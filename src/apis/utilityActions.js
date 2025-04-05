@@ -7,7 +7,7 @@ export const fetchAllStates = async ( token, setAllStates, setError, setFetching
     try{
         const response  = await axios.get(`states`,
             {
-                headers: { 'Accept' : 'application/json' }
+                headers: { 'Accept' : 'application/json', 'Authorization' : `Bearer ${token}` }
             }
         );    
 
