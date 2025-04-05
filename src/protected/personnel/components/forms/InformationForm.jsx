@@ -68,32 +68,23 @@ const InformationForm = ({ view }) => {
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Phone number'
                     />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Residential address'
-                    />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Residential city'
-                    />
+                    <StatesComponent setState={setState} placeholder='Select Residential state' />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Residential LGA'
-                    />
-                    <StatesComponent setState={setState} placeholder='Residential address' />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='State of origin'
                     />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Town unit'
                     />
+                    <input 
+                        type='text'
+                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
+                        placeholder='Residential address'
+                    />
+                    <StatesComponent setState={setState} placeholder='Select State of origin' />
                 </div>
 
                 <div className='w-full grid md:flex md:flex-wrap md:gap-4 space-y-4 md:space-y-0 items-center'>

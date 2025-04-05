@@ -17,12 +17,11 @@ const StatesComponent = ({ setState, placeholder }) => {
         <select
             className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
             onChange={(e) => setState(e.target.value)}
-            placeholder={placeholder}
             required
         >
             <option value="">
             { 
-                fetching && !allStates ? 'fetching states' : 'select state'
+                fetching && !allStates ? 'fetching states' : placeholder
             }
             </option>
         {
