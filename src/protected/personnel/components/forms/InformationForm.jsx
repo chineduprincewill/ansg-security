@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import StatesComponent from '../../../../common/StatesComponent';
+import LgaComponents from '../../../../common/LgaComponents';
+import TownComponent from '../../../../common/TownComponent';
 
 const InformationForm = ({ view }) => {
 
     const [saving, setSaving] = useState(false);
-    const [state, setState] = useState();
+    const [residential_state_id, setResidential_state_id] = useState();
+    const [state_of_origin_id, setState_of_origin_id] = useState();
+    const [residential_lga_id, setResidential_lga_id] = useState();
+    const [town_unit_id, setTown_unit_id] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,16 +54,23 @@ const InformationForm = ({ view }) => {
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Date of birth'
                     />
-                    <input 
-                        type='text'
+                    <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='gender'
-                    />
-                    <input 
-                        type='text'
+                    >
+                        <option value="">Gender</option>
+                        <option value="male">"male"</option>
+                        <option value="female">"female"</option>
+                        <option value="other">"other"</option>
+                    </select>
+                    <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='marital status'
-                    />
+                    >
+                        <option value="">Marital status</option>
+                        <option value="single">"single"</option>
+                        <option value="married">"married"</option>
+                        <option value="divorced">"divorced"</option>
+                        <option value="widowed">"widowed"</option>
+                    </select>
                 </div>
 
                 <div className='w-full grid md:flex md:flex-wrap md:gap-4 space-y-4 md:space-y-0 items-center'>
@@ -68,23 +80,20 @@ const InformationForm = ({ view }) => {
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Phone number'
                     />
-                    <StatesComponent setState={setState} placeholder='Select Residential state' />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Residential LGA'
-                    />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Town unit'
-                    />
+                    <StatesComponent setState={setResidential_state_id} placeholder='Select Residential state' />
+                    <LgaComponents state_id={residential_state_id} setLga={setResidential_lga_id} placeholder='Select Residential LGA' />
+                    <TownComponent lga_id={residential_lga_id} setTown={setTown_unit_id} placeholder='Select Town unit' />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Residential address'
                     />
-                    <StatesComponent setState={setState} placeholder='Select State of origin' />
+                    <input 
+                        type='text'
+                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
+                        placeholder='Residential city'
+                    />
+                    <StatesComponent setState={setState_of_origin_id} placeholder='Select State of origin' />
                 </div>
 
                 <div className='w-full grid md:flex md:flex-wrap md:gap-4 space-y-4 md:space-y-0 items-center'>

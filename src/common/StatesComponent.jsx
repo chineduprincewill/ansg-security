@@ -27,7 +27,7 @@ const StatesComponent = ({ setState, placeholder }) => {
         {
             (allStates && allStates?.data.length > 0) &&
                 allStates?.data.map(state => (
-                    <opiton key={state?.id} value={state?.id}>{state?.name}</opiton>
+                    <option key={state?.id} className='dark:bg-gray-800 dark:text-white' value={state?.id}>{state?.name}</option>
                 ))
         }
         </select>
