@@ -50,26 +50,26 @@ const InformationForm = ({ view }) => {
                         placeholder='Middle name'
                     />
                     <input 
-                        type='text'
+                        type='date'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Date of birth'
                     />
                     <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                     >
-                        <option value="">Gender</option>
-                        <option value="male">"male"</option>
-                        <option value="female">"female"</option>
-                        <option value="other">"other"</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="">Gender</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="male">male</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="female">female</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="other">other</option>
                     </select>
                     <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                     >
-                        <option value="">Marital status</option>
-                        <option value="single">"single"</option>
-                        <option value="married">"married"</option>
-                        <option value="divorced">"divorced"</option>
-                        <option value="widowed">"widowed"</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="">Marital status</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="single">single</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="married">married</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="divorced">divorced</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="widowed">widowed</option>
                     </select>
                 </div>
 
@@ -98,31 +98,37 @@ const InformationForm = ({ view }) => {
 
                 <div className='w-full grid md:flex md:flex-wrap md:gap-4 space-y-4 md:space-y-0 items-center'>
                     <h2 className='w-full text-[#ffaa00] uppercase'>other information</h2>
-                    <input 
-                        type='text'
+                    <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Any health challenge?'
-                    />
+                    >
+                        <option className='dark:bg-gray-800 dark:text-white' value="">Any health challenge?</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="yes">yes</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="no">no</option>
+                    </select>
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='If yes, detail of health challenge'
                     />
-                    <input 
-                        type='text'
+                    <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Any disability?'
-                    />
+                    >
+                        <option className='dark:bg-gray-800 dark:text-white' value="">Any disability?</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="yes">yes</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="no">no</option>
+                    </select>
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='If yes, detail of disability'
                     />
-                    <input 
-                        type='text'
+                    <select
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Been incarcerated?'
-                    />
+                    >
+                        <option  className='dark:bg-gray-800 dark:text-white'value="">Been incarcerated?</option>
+                        <option className='dark:bg-gray-800 dark:text-white' value="yes">yes</option>
+                        <option  className='dark:bg-gray-800 dark:text-white'value="no">no</option>
+                    </select>
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
