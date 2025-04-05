@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import StatesComponent from '../../../../common/StatesComponent';
 
 const InformationForm = ({ view }) => {
 
     const [saving, setSaving] = useState(false);
+    const [state, setState] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -81,11 +83,7 @@ const InformationForm = ({ view }) => {
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Residential LGA'
                     />
-                    <input 
-                        type='text'
-                        className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
-                        placeholder='Residential state'
-                    />
+                    <StatesComponent setState={setState} placeholder='Residential address' />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
