@@ -1,13 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { AppContext } from '../../../../context/AppContext';
+import { countIntegerDigits } from '../../../../apis/functions';
 
 const QualificationsForm = ({ view, setView }) => {
 
+    const { token } = useContext(AppContext);
     const [saving, setSaving] = useState(false);
+    const [qualification_type, setQualification_type] = useState();
+    const [institution_attended, setInstitution_attended] = useState();
+    const [grade, setGrade] = useState();
+    const [year_obtained, setYear_obtained] = useState();
             
     const handleSubmit = (e) => {
         e.preventDefault();
     }
+
+    useEffect(() => {
+        if(countIntegerDigits(year_obtained) > 4){
+            alert('Year out of range!');
+            setYear_obtained(Math.floor(year_obtained / 10));
+        }
+    }, [year_obtained])
 
     return (
         <div className='w-full'>
@@ -20,21 +34,31 @@ const QualificationsForm = ({ view, setView }) => {
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Qualification type'
+                        onChange={(e) => setQualification_type(e.target.value)}
+                        required
                     />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Institution attended'
+                        onChange={(e) => setInstitution_attended(e.target.value)}
+                        required
+
                     />
                     <input 
                         type='text'
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Grade'
+                        onChange={(e) => setGrade(e.target.value)}
+                        required
                     />
                     <input 
                         type='number'
+                        value={year_obtained}
                         className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
                         placeholder='Year obtained'
+                        onChange={(e) => setYear_obtained(e.target.value)}
+                        required
                     />
                 </div>
                 <div className='pt-4 flex items-center gap-4'>

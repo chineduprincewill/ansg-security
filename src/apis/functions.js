@@ -438,3 +438,13 @@ export const generateAvatar = (text) => {
     .toUpperCase())
     .join('');
 }
+
+export const countIntegerDigits = (number) => {
+    number = Math.abs(Math.trunc(number)); // Remove decimals
+    let count = 0;
+    while (number > 0) {
+      number = Math.floor(number / 10);
+      count++;
+    }
+    return count;
+}

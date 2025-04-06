@@ -18,7 +18,6 @@ const TownComponent = ({ lga_id, setTown, placeholder }) => {
         <select
             className='w-full md:w-[48%] p-2 rounded-md border dark:border-gray-700 bg-transparent'
             onChange={(e) => setTown(e.target.value)}
-            required
         >
             <option value="">
             { 
